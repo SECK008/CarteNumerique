@@ -1,0 +1,1 @@
+Déposez ici votre vrai logo (ex: logo.png), puis renseignez son chemin dans config.php (logo_path).

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Astou Loum — Teranga Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1B1F2A;
+    --ink-soft: #5B6270;
+    --gold: #C9A227;
+    --paper: #FBFAF7;
+    --card: #FFFFFF;
+    --line: #E7E4DB;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #F2F0EA; --ink-soft: #A9AFBC;
+      --paper: #14161C; --card: #1C1F27; --line: #2B2F3A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #F2F0EA; --ink-soft: #A9AFBC;
+    --paper: #14161C; --card: #1C1F27; --line: #2B2F3A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    min-height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 16px 48px;
+  }
+  .sheet { width: 100%; max-width: 420px; }
+  .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+  .brand img, .brand svg { width: 34px; height: 34px; flex-shrink: 0; }
+  .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; }
+  .brand-name span { display: block; font-size: 10px; color: var(--ink-soft); font-weight: 400; }
+
+  .eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    margin: 0 4px 8px;
+  }
+
+  /* --- Recto : informations --- */
+  .face-recto {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  .face-recto::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gold);
+  }
+  .card-top { display: flex; justify-content: flex-end; align-items: center; gap: 14px; padding: 24px 24px 0; }
+  .photo { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+  .id-badge {
+    font-family: 'Space Grotesk', monospace; font-size: 13px; letter-spacing: 0.04em;
+    color: var(--ink-soft); border: 1px solid var(--line); border-radius: 100px; padding: 5px 12px;
+  }
+  .name-block { padding: 18px 24px 4px; }
+  .name-block .prenom { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.1; }
+  .name-block .nom { font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 26px; line-height: 1.1; color: var(--ink-soft); }
+  .divider { height: 1px; background: var(--line); margin: 20px 24px; }
+  .info-list { padding: 0 24px 26px; display: flex; flex-direction: column; gap: 16px; }
+  .info-row { display: flex; gap: 14px; align-items: flex-start; }
+  .info-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+  .info-text .label { font-size: 11px; color: var(--ink-soft); margin-bottom: 2px; }
+  .info-text .value { font-size: 15px; font-weight: 500; }
+
+  /* --- Verso : logo, au même format que la carte physique (CR80) --- */
+  .gap { height: 28px; }
+  .face-verso {
+    background: var(--ink);
+    border-radius: 10px;
+    aspect-ratio: 85.6 / 54;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .face-verso .logo-mark svg, .face-verso .logo-mark img { width: 56px; height: 56px; display: block; object-fit: contain; }
+  .face-verso .company {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(13px, 4vw, 18px);
+    letter-spacing: 0.06em;
+    color: var(--paper);
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .foot-note { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 20px; }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="brand">
+      <svg viewBox="0 0 40 40" fill="none">
+    <circle cx="20" cy="20" r="19" stroke="#C9A227" stroke-width="1.5"/>
+    <path d="M20 8 27 15 20 32 13 15 20 8Z" fill="#C9A227"/>
+</svg>
+      <div class="brand-name">Teranga Group<span>Carte professionnelle numérique</span></div>
+    </div>
+
+    <div class="eyebrow">RECTO</div>
+    <div class="face-recto">
+      <div class="card-top">
+        <img class="photo" src="data:image/png;base64,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" alt="Photo de Astou">
+        <span class="id-badge">ENT-0135</span>
+      </div>
+      <div class="name-block">
+        <div class="prenom">Astou</div>
+        <div class="nom">Loum</div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-list">
+        <div class="info-row">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+          <div class="info-text"><div class="label">Téléphone</div><div class="value">+221 77 525 71 70</div></div>
+        </div>
+        <div class="info-row">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5h3.5a1 1 0 0 0 1-1v-9"/></svg>
+          <div class="info-text"><div class="label">Adresse</div><div class="value">Mermoz, Dakar</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gap"></div>
+
+    <div class="eyebrow">VERSO</div>
+    <div class="face-verso">
+      <div class="logo-mark"><svg viewBox="0 0 40 40" fill="none">
+    <circle cx="20" cy="20" r="19" stroke="#C9A227" stroke-width="1.5"/>
+    <path d="M20 8 27 15 20 32 13 15 20 8Z" fill="#C9A227"/>
+</svg></div>
+      <div class="company">TERANGA GROUP</div>
+    </div>
+
+    <div class="foot-note">Carte n° ENT-0135 — Teranga Group</div>
+  </div>
+</body>
+</html>

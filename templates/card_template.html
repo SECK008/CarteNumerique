@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: Helvetica, Arial, sans-serif; }
+
+  .card {
+    width: {{CARD_WIDTH_MM}}mm;
+    height: {{CARD_HEIGHT_MM}}mm;
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+  }
+  .card.last { page-break-after: avoid; }
+
+  /* --- Recto : identité + QR code --- */
+  .front { background: #FBFAF7; }
+  .front .bar { position: absolute; top: 0; left: 0; right: 0; height: 3mm; background: {{ACCENT_COLOR}}; }
+  .front .id { position: absolute; top: 11mm; left: 8mm; font-size: 13pt; font-weight: bold; color: {{INK_COLOR}}; }
+  .front .name { position: absolute; top: 17mm; left: 8mm; font-size: 8pt; color: #5B6270; }
+  .front .footer { position: absolute; bottom: 6mm; left: 8mm; font-size: 6.5pt; color: #5B6270; }
+  .front .qr { position: absolute; top: 12mm; right: 7mm; width: 30mm; height: 30mm; }
+
+  /* --- Verso : logo --- */
+  .back { background: {{INK_COLOR}}; }
+  .back .logo-wrap { position: absolute; top: 12mm; left: 0; right: 0; text-align: center; }
+  .back .logo-img { width: 16mm; height: auto; }
+  .back .logo-mark { width: 16mm; height: 16mm; }
+  .back .company { position: absolute; top: 32mm; left: 0; right: 0; text-align: center;
+                   font-size: 10pt; font-weight: bold; letter-spacing: 0.05em; color: #FBFAF7; }
+</style>
+</head>
+<body>
+{{CARDS}}
+</body>
+</html>

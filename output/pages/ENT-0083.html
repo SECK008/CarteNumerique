@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yaye Coly — Teranga Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1B1F2A;
+    --ink-soft: #5B6270;
+    --gold: #C9A227;
+    --paper: #FBFAF7;
+    --card: #FFFFFF;
+    --line: #E7E4DB;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #F2F0EA; --ink-soft: #A9AFBC;
+      --paper: #14161C; --card: #1C1F27; --line: #2B2F3A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #F2F0EA; --ink-soft: #A9AFBC;
+    --paper: #14161C; --card: #1C1F27; --line: #2B2F3A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    min-height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 16px 48px;
+  }
+  .sheet { width: 100%; max-width: 420px; }
+  .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+  .brand img, .brand svg { width: 34px; height: 34px; flex-shrink: 0; }
+  .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; }
+  .brand-name span { display: block; font-size: 10px; color: var(--ink-soft); font-weight: 400; }
+
+  .eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    margin: 0 4px 8px;
+  }
+
+  /* --- Recto : informations --- */
+  .face-recto {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  .face-recto::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gold);
+  }
+  .card-top { display: flex; justify-content: flex-end; align-items: center; gap: 14px; padding: 24px 24px 0; }
+  .photo { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+  .id-badge {
+    font-family: 'Space Grotesk', monospace; font-size: 13px; letter-spacing: 0.04em;
+    color: var(--ink-soft); border: 1px solid var(--line); border-radius: 100px; padding: 5px 12px;
+  }
+  .name-block { padding: 18px 24px 4px; }
+  .name-block .prenom { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.1; }
+  .name-block .nom { font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 26px; line-height: 1.1; color: var(--ink-soft); }
+  .divider { height: 1px; background: var(--line); margin: 20px 24px; }
+  .info-list { padding: 0 24px 26px; display: flex; flex-direction: column; gap: 16px; }
+  .info-row { display: flex; gap: 14px; align-items: flex-start; }
+  .info-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+  .info-text .label { font-size: 11px; color: var(--ink-soft); margin-bottom: 2px; }
+  .info-text .value { font-size: 15px; font-weight: 500; }
+
+  /* --- Verso : logo, au même format que la carte physique (CR80) --- */
+  .gap { height: 28px; }
+  .face-verso {
+    background: var(--ink);
+    border-radius: 10px;
+    aspect-ratio: 85.6 / 54;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .face-verso .logo-mark svg, .face-verso .logo-mark img { width: 56px; height: 56px; display: block; object-fit: contain; }
+  .face-verso .company {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(13px, 4vw, 18px);
+    letter-spacing: 0.06em;
+    color: var(--paper);
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .foot-note { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 20px; }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="brand">
+      <svg viewBox="0 0 40 40" fill="none">
+    <circle cx="20" cy="20" r="19" stroke="#C9A227" stroke-width="1.5"/>
+    <path d="M20 8 27 15 20 32 13 15 20 8Z" fill="#C9A227"/>
+</svg>
+      <div class="brand-name">Teranga Group<span>Carte professionnelle numérique</span></div>
+    </div>
+
+    <div class="eyebrow">RECTO</div>
+    <div class="face-recto">
+      <div class="card-top">
+        <img class="photo" src="data:image/png;base64,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" alt="Photo de Yaye">
+        <span class="id-badge">ENT-0083</span>
+      </div>
+      <div class="name-block">
+        <div class="prenom">Yaye</div>
+        <div class="nom">Coly</div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-list">
+        <div class="info-row">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+          <div class="info-text"><div class="label">Téléphone</div><div class="value">+221 76 599 38 44</div></div>
+        </div>
+        <div class="info-row">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5h3.5a1 1 0 0 0 1-1v-9"/></svg>
+          <div class="info-text"><div class="label">Adresse</div><div class="value">Liberté 6, Dakar</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gap"></div>
+
+    <div class="eyebrow">VERSO</div>
+    <div class="face-verso">
+      <div class="logo-mark"><svg viewBox="0 0 40 40" fill="none">
+    <circle cx="20" cy="20" r="19" stroke="#C9A227" stroke-width="1.5"/>
+    <path d="M20 8 27 15 20 32 13 15 20 8Z" fill="#C9A227"/>
+</svg></div>
+      <div class="company">TERANGA GROUP</div>
+    </div>
+
+    <div class="foot-note">Carte n° ENT-0083 — Teranga Group</div>
+  </div>
+</body>
+</html>

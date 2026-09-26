@@ -1,0 +1,12 @@
+{
+    "name": "votre-entreprise/cartes-employes",
+    "description": "Génération de cartes électroniques (pages de profil, QR codes, PDF imprimable) à partir d'un fichier Excel.",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "ext-gd": "*",
+        "ext-mbstring": "*",
+        "phpoffice/phpspreadsheet": "^1.29",
+        "endroid/qr-code": "^5.0",
+        "dompdf/dompdf": "^3.0"    }
+}

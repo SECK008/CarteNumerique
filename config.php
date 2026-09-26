@@ -19,7 +19,7 @@ return [
     // Chaque employé aura une page à base_url/<ID>.html
     // Exemple GitHub Pages : 'https://votre-compte.github.io/cartes'
     // Exemple nom de domaine : 'https://carte.votreentreprise.com'
-    'base_url'      => 'https://REMPLACEZ-MOI.github.io/cartes',
+    'base_url'      => 'https://seck008.github.io/CarteNumerique/',
 
     // --- Fichiers et dossiers (chemins relatifs à la racine du projet) ---
     'data_file'       => 'data/employees.xlsx',
